@@ -28,10 +28,10 @@ cd "C:\Users\Rahul\OneDrive\Desktop\PROJECTS\todo"
 git init
 
 # Add your GitHub repository as origin
-git remote add origin https://github.com/Ashiish-Agarwal/auto-commit.git
+git remote add origin https://github.com/example/auto-commit.git
 #if you got some error look like this : remote origin already exists.
 #use this 
-git remote set-url origin https://github.com/Ashiish-Agarwal/auto-commit.git
+git remote set-url origin https://github.com/example/auto-commit.git
 
 # Set up your git credentials (if not already done)
 git config user.name "Your Name"
@@ -58,7 +58,7 @@ node daily-commit.js
 
 ### Automated Daily Runs
 
-#### Option 1: Windows Task Scheduler
+#### : Windows Task Scheduler
 1. Open Task Scheduler (search "Task Scheduler" in Windows)
 2. Click "Create Basic Task"
 3. Name: "Daily GitHub Commit"
@@ -68,28 +68,6 @@ node daily-commit.js
 7. Arguments: `daily-commit.js`
 8. Start in: `C:\Users\Rahul\OneDrive\Desktop\PROJECTS\todo`
 
-#### Option 2: GitHub Actions (Recommended)
-Create `.github/workflows/daily-commit.yml` in your repository:
-
-```yaml
-name: Daily Commit
-on:
-  schedule:
-    - cron: '0 12 * * *'  # Daily at 12 PM UTC
-  workflow_dispatch:
-
-jobs:
-  commit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-      - name: Make daily commit
-        run: node daily-commit.js
-```
 
 ## What It Does
 1. Creates a `daily-activity.txt` file with random content
