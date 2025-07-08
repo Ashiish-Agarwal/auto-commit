@@ -28,7 +28,10 @@ cd "C:\Users\Rahul\OneDrive\Desktop\PROJECTS\todo"
 git init
 
 # Add your GitHub repository as origin
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git remote add origin https://github.com/Ashiish-Agarwal/auto-commit.git
+#if you got some error look like this : remote origin already exists.
+#use this 
+git remote set-url origin https://github.com/Ashiish-Agarwal/auto-commit.git
 
 # Set up your git credentials (if not already done)
 git config user.name "Your Name"
